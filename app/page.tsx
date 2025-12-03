@@ -63,7 +63,6 @@ export default function HurricaneTrafficLanding() {
                 Order a Test Run
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <p className="text-sm text-orange-300 mt-3">🎯 20% Discount on Initial Leads</p>
             </div>
 
             <div className="relative">
@@ -234,16 +233,13 @@ export default function HurricaneTrafficLanding() {
                 Ready to Start Your Traffic Storm?
               </h2>
               <p className="text-lg text-orange-200">
-                Get your discounted test run and see the Hurricane Traffic difference
+                We only mean business and quality leads
               </p>
             </div>
 
             <Card className="bg-slate-800/70 border-orange-500/30">
               <CardHeader>
                 <CardTitle className="text-orange-100 text-center">Order Your Test Run</CardTitle>
-                <CardDescription className="text-orange-300 text-center">
-                  🎯 20% Discount on Initial Leads - Limited Time Offer
-                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form className="space-y-6">
@@ -310,7 +306,7 @@ export default function HurricaneTrafficLanding() {
                     size="lg"
                     className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 font-semibold py-4 text-lg shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
                   >
-                    Claim Your 20% Discount Test Run
+                    Order a Test Run
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
@@ -336,7 +332,7 @@ export default function HurricaneTrafficLanding() {
                 Hurricane Traffic
               </span>
             </div>
-            <div className="text-orange-300 text-sm">© 2024 Hurricane Traffic. All rights reserved.</div>
+            <div className="text-orange-300 text-sm">© 2025 Hurricane Traffic. All rights reserved.</div>
           </div>
         </div>
       </footer>
