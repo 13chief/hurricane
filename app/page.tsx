@@ -1,43 +1,17 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { TrendingUp, Target, Users, Zap, Star, ArrowRight } from "lucide-react"
+import { ContactForm } from "@/components/contact-form"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+import { TrendingUp, Target, Users, Zap, Star, ArrowRight, Search, Compass, Rocket, LineChart } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HurricaneTrafficLanding() {
   return (
     <div className="min-h-screen bg-slate-900 text-orange-100">
-      {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Image
-              src="/hurricane-logo.png"
-              alt="Hurricane Traffic Logo"
-              width={40}
-              height={40}
-              className="rounded-lg"
-            />
-            <span className="text-xl font-bold bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-              Hurricane Traffic
-            </span>
-          </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#about" className="text-orange-200 hover:text-orange-400 transition-colors">
-              About
-            </a>
-            <a href="#cases" className="text-orange-200 hover:text-orange-400 transition-colors">
-              Cases
-            </a>
-            <a href="#contact" className="text-orange-200 hover:text-orange-400 transition-colors">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
@@ -57,11 +31,14 @@ export default function HurricaneTrafficLanding() {
                 results.
               </p>
               <Button
+                asChild
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
               >
-                Order a Test Run
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <a href="#order-form">
+                  Order a Test Run
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
 
@@ -141,6 +118,114 @@ export default function HurricaneTrafficLanding() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section id="process" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+              Our Process
+            </h2>
+            <p className="text-lg text-orange-200">
+              A clear, repeatable system that keeps results and transparency front and center.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="bg-slate-800/60 border-orange-500/20">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center">
+                    <Search className="h-5 w-5" />
+                  </div>
+                  <span className="text-xs uppercase tracking-wide text-orange-400">Step 1</span>
+                </div>
+                <CardTitle className="text-orange-100">Discovery</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-orange-200">
+                <p className="text-sm text-orange-300">1-2 days</p>
+                <ul className="list-disc space-y-2 pl-5 text-sm">
+                  <li>Audit current traffic, funnel, and conversion data.</li>
+                  <li>Define ICP, offer positioning, and success metrics.</li>
+                  <li>Confirm budget range and growth timeline.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-800/60 border-orange-500/20">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center">
+                    <Compass className="h-5 w-5" />
+                  </div>
+                  <span className="text-xs uppercase tracking-wide text-orange-400">Step 2</span>
+                </div>
+                <CardTitle className="text-orange-100">Strategy</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-orange-200">
+                <p className="text-sm text-orange-300">3-5 days</p>
+                <ul className="list-disc space-y-2 pl-5 text-sm">
+                  <li>Build channel mix, budget split, and KPI targets.</li>
+                  <li>Map funnel stages, landing pages, and lead flow.</li>
+                  <li>Create creative angles and testing roadmap.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-800/60 border-orange-500/20">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center">
+                    <Rocket className="h-5 w-5" />
+                  </div>
+                  <span className="text-xs uppercase tracking-wide text-orange-400">Step 3</span>
+                </div>
+                <CardTitle className="text-orange-100">Launch</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-orange-200">
+                <p className="text-sm text-orange-300">1-2 weeks</p>
+                <ul className="list-disc space-y-2 pl-5 text-sm">
+                  <li>Implement tracking, pixels, and conversion events.</li>
+                  <li>Build campaigns, QA ads, and validate landing pages.</li>
+                  <li>Go live with initial tests and daily monitoring.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-slate-800/60 border-orange-500/20">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-11 h-11 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center">
+                    <LineChart className="h-5 w-5" />
+                  </div>
+                  <span className="text-xs uppercase tracking-wide text-orange-400">Step 4</span>
+                </div>
+                <CardTitle className="text-orange-100">Optimize</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-orange-200">
+                <p className="text-sm text-orange-300">Ongoing</p>
+                <ul className="list-disc space-y-2 pl-5 text-sm">
+                  <li>Weekly reporting with performance insights.</li>
+                  <li>Creative refreshes and audience refinement.</li>
+                  <li>Budget scaling based on ROI and lead quality.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <div className="rounded-lg border border-orange-500/20 bg-slate-800/50 px-6 py-4 text-center text-orange-200">
+              Dedicated strategist with weekly checkpoints.
+            </div>
+            <div className="rounded-lg border border-orange-500/20 bg-slate-800/50 px-6 py-4 text-center text-orange-200">
+              Clear KPIs, shared dashboards, and honest performance notes.
+            </div>
+            <div className="rounded-lg border border-orange-500/20 bg-slate-800/50 px-6 py-4 text-center text-orange-200">
+              Fast creative turnaround to keep tests moving.
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Case Studies Section */}
       <section id="cases" className="py-20">
         <div className="container mx-auto px-4">
@@ -172,6 +257,17 @@ export default function HurricaneTrafficLanding() {
                     <span className="text-orange-400 font-semibold">4.8x</span>
                   </div>
                 </div>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="mt-6 w-full border-orange-500/40 bg-transparent text-orange-200 hover:bg-orange-500/10 hover:text-orange-100"
+                >
+                  <Link href="/case-studies/ecommerce-fashion-brand">
+                    Read case study
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
 
@@ -195,6 +291,17 @@ export default function HurricaneTrafficLanding() {
                     <span className="text-orange-400 font-semibold">+120%</span>
                   </div>
                 </div>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="mt-6 w-full border-orange-500/40 bg-transparent text-orange-200 hover:bg-orange-500/10 hover:text-orange-100"
+                >
+                  <Link href="/case-studies/saas-startup">
+                    Read case study
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
 
@@ -218,8 +325,28 @@ export default function HurricaneTrafficLanding() {
                     <span className="text-orange-400 font-semibold">+380%</span>
                   </div>
                 </div>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="mt-6 w-full border-orange-500/40 bg-transparent text-orange-200 hover:bg-orange-500/10 hover:text-orange-100"
+                >
+                  <Link href="/case-studies/local-service-business">
+                    Read case study
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
+          </div>
+          <div className="mt-10 text-center">
+            <Button
+              asChild
+              variant="outline"
+              className="border-orange-500/40 bg-transparent text-orange-200 hover:bg-orange-500/10 hover:text-orange-100"
+            >
+              <Link href="/case-studies">View all case studies</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -242,100 +369,14 @@ export default function HurricaneTrafficLanding() {
                 <CardTitle className="text-orange-100 text-center">Order Your Test Run</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="name" className="text-orange-200">
-                        Name *
-                      </Label>
-                      <Input
-                        id="name"
-                        className="bg-slate-700 border-slate-600 text-orange-100 focus:border-orange-500"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email" className="text-orange-200">
-                        Email *
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        className="bg-slate-700 border-slate-600 text-orange-100 focus:border-orange-500"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="company" className="text-orange-200">
-                        Company Name *
-                      </Label>
-                      <Input
-                        id="company"
-                        className="bg-slate-700 border-slate-600 text-orange-100 focus:border-orange-500"
-                        placeholder="Your company"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="phone" className="text-orange-200">
-                        Phone Number
-                      </Label>
-                      <Input
-                        id="phone"
-                        className="bg-slate-700 border-slate-600 text-orange-100 focus:border-orange-500"
-                        placeholder="(optional)"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="description" className="text-orange-200">
-                      Brief Description of Business/Requirements *
-                    </Label>
-                    <Textarea
-                      id="description"
-                      className="bg-slate-700 border-slate-600 text-orange-100 focus:border-orange-500 min-h-[100px]"
-                      placeholder="Tell us about your business and what you're looking to achieve..."
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-slate-900 font-semibold py-4 text-lg shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
-                  >
-                    Order a Test Run
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </form>
+                <ContactForm />
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-slate-800">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <Image
-                src="/hurricane-logo.png"
-                alt="Hurricane Traffic Logo"
-                width={32}
-                height={32}
-                className="rounded-lg"
-              />
-              <span className="text-lg font-semibold bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                Hurricane Traffic
-              </span>
-            </div>
-            <div className="text-orange-300 text-sm">© 2025 Hurricane Traffic. All rights reserved.</div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
